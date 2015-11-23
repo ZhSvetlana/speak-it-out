@@ -1,0 +1,18 @@
+@main("Welcome") {
+<div ng-controller="CategoriesController">
+    <h1>Choose a category</h1>
+    <div class="row">
+        <div class="col-sm-4">
+            <img class="owl" src="/assets/images/owl2.png" width="100%">
+        </div>
+        <div class="col-sm-8">
+            <form role="form">
+                <div class="radio" ng-repeat="category in categories">
+                    <input type="radio" name="category" id="category-{{ category.id }}" value="{{ category.id }}">
+                    <label for="category-{{ category.id }}" ng-bind="category.name"></label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+}

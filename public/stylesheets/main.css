@@ -1,0 +1,29 @@
+.navbar-brand {
+    height: auto;
+}
+
+#logo {
+    width: 80px;
+}
+
+.navbar-nav {
+    margin: 0;
+}
+
+.navbar {
+    background-color: bisque;
+    margin-bottom: 0;
+    border: none;
+    border-bottom: 1px solid #e7e7e7
+}
+
+.main-container {
+    position: relative;
+    top: 40px;
+    background-color: rgba(255, 228, 196, 0.4);
+    border: 1px solid #e7e7e7;
+}
+
+h1 {
+    text-align: center;
+}
