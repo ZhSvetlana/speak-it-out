@@ -1,4 +1,4 @@
-angular.module('app.main').controller('CategoriesController', function ($scope, CategoriesDataService) {
+angular.module('app.vocabulary').controller('CategoriesController', function ($scope, CategoriesDataService) {
     'use strict';
 
     $scope.categories = [];
@@ -9,6 +9,5 @@ angular.module('app.main').controller('CategoriesController', function ($scope, 
             id: 0,
             name: 'All categories'
         });
-        console.log($scope.categories);
     });
 });

@@ -1,9 +1,10 @@
 package controllers;
 
-import play.*;
-import play.mvc.*;
-
-import views.html.*;
+import play.mvc.Controller;
+import play.mvc.Result;
+import views.html.categories;
+import views.html.exercise;
+import views.html.index;
 
 public class Application extends Controller {
 
@@ -13,5 +14,9 @@ public class Application extends Controller {
 
     public Result categories() {
         return ok(categories.render());
+    }
+
+    public Result exercise() {
+        return ok(exercise.render());
     }
 }

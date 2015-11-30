@@ -12,6 +12,7 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
         <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
     </head>
     <body ng-app="app">
         <div class="container">
@@ -39,8 +40,6 @@
                 </div>
 
             </nav>
-
-
                 @content
             </div>
         </div>
@@ -49,5 +48,7 @@
         <script src="@routes.Assets.versioned("javascripts/vocabulary/vocabulary.module.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/vocabulary/categories-data.service.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/vocabulary/categories/categories.controller.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/vocabulary/exercise/exercise.controller.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/vocabulary/words-data.service.js")"></script>
     </body>
 </html>

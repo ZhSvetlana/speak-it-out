@@ -2,8 +2,7 @@ angular.module('app.vocabulary').factory('CategoriesDataService', function ($htt
     'use strict';
     return {
         getAll: function getAll() {
-            var deffered = $q.defer();
-            deffered.resolve([
+            return $q.resolve([
                 {
                     id: 1,
                     name: 'School'
@@ -15,9 +14,12 @@ angular.module('app.vocabulary').factory('CategoriesDataService', function ($htt
                 {
                     id: 3,
                     name: 'Food'
+                },
+                {
+                    id: 3,
+                    name: 'AAA'
                 }
             ]);
-            return deffered.promise;
             //return $http.get('/api/categories').then(function (response) {
             //    return response.data;
             //})
