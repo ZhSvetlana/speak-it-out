@@ -17,29 +17,29 @@
     <body ng-app="app">
         <div class="container">
             <div class="main-container">
-            <nav class="navbar navbar-default">
-
-                <div class="col-sm-4">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#"><img id="logo" src="/assets/images/logo.png"></a>
+                <nav class="navbar navbar-default">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="#"><img id="logo" src="/assets/images/logo.png"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="/">Home</a></li>
+                                <li><a href="/categories">Categories</a></li>
+                                <li><a href="#">Profile</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4">
+                            <h1 class="text-right">Hello, Kid!</h1>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Home</a></li>
-                        <li><a href="/categories">Categories</a></li>
-                        <li><a href="#">Profile</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-4">
-                    <h1 class="text-right">Hello, Kid!</h1>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    </ul>
-                </div>
-
-            </nav>
+                </nav>
                 @content
             </div>
         </div>

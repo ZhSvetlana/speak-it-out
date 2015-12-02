@@ -1,8 +1,7 @@
-
 # --- !Ups
 
 create table answer (
-  id                        integer primary key AUTOINCREMENT,
+  id                        integer primary key AUTO_INCREMENT,
   audio                     varchar(255),
   spelling                  varchar(255),
   game_session_id           integer,
@@ -13,13 +12,13 @@ create table answer (
 ;
 
 create table category (
-  id                        integer primary key AUTOINCREMENT,
+  id                        integer primary key AUTO_INCREMENT,
   name                      varchar(255)
 )
 ;
 
 create table game_session (
-  id                        integer primary key AUTOINCREMENT,
+  id                        integer primary key AUTO_INCREMENT,
   sequence_number           integer,
   date                      date,
   correct_answers           integer,
@@ -29,7 +28,7 @@ create table game_session (
 ;
 
 create table user (
-  id                        integer primary key AUTOINCREMENT,
+  id                        integer primary key AUTO_INCREMENT,
   first_name                varchar(255),
   second_name               varchar(255),
   birth_date                date,
@@ -41,7 +40,7 @@ create table user (
 ;
 
 create table word (
-  id                        integer primary key AUTOINCREMENT,
+  id                        integer primary key AUTO_INCREMENT,
   spelling                  varchar(255),
   picture                   varchar(255),
   level                     integer,
