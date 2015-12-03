@@ -9,6 +9,7 @@ GET     /categories                 controllers.Application.categories()
 GET     /exercise                   controllers.Application.exercise()
 
 GET     /api/categories             controllers.Application.getCategories()
+GET     /api/words                 controllers.Application.getWords()
 
 
 # Map static resources from the /public folder to the /assets URL path

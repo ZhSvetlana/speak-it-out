@@ -26,6 +26,21 @@ body {
     border-bottom: 1px solid #e7e7e7
 }
 
+.navbar h1 {
+    padding-right: 15px;
+    float: right;
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    background-color: #F7EF70;
+}
+
+.menu {
+    position: relative;
+    bottom: -90px;
+}
+
 .main-container {
     position: relative;
     top: 40px;
@@ -51,4 +66,9 @@ h1 {
 .btn {
     display: block;
     margin: auto;
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
 }

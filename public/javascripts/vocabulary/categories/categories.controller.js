@@ -5,10 +5,10 @@ angular.module('app.vocabulary').controller('CategoriesController', function ($s
 
     CategoriesDataService.getAll().then(function(categories) {
         $scope.categories = categories;
-        $scope.categories.unshift(/*{
+        $scope.categories.unshift({
             id: 0,
             name: 'All categories'
-        }*/"All categories");
+        });
     });
 });
 

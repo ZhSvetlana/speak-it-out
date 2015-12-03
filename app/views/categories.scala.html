@@ -9,7 +9,7 @@
             <form role="form">
                 <div class="radio" ng-repeat="category in categories">
                     <input type="radio" name="category" id="category-{{ category.id }}" value="{{ category.id }}">
-                    <label for="category-{{ category.id }}" ng-bind="category"></label>
+                    <label for="category-{{ category.id }}" ng-bind="category.name"></label>
                 </div>
             </form>
         </div>

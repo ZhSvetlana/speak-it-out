@@ -1,17 +1,16 @@
 package controllers;
 
 import models.Category;
+import models.Word;
+import play.db.jpa.Transactional;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.categories;
 import views.html.exercise;
 import views.html.index;
-import play.db.jpa.Transactional;
-import java.util.HashSet;
+
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 public class Application extends Controller {
 
@@ -28,27 +27,28 @@ public class Application extends Controller {
     }
 
     @Transactional
-      public Result getCategories()
+    public Result getCategories()
     {
         List<Category> allCategories = Category.getAll();
-        Set<String> categories = new HashSet<>();
         for(Category category : allCategories) {
-            categories.add(category.name);
+          category.words=null;
         }
-        categories = categories.stream().collect(Collectors.toSet());
-        return ok(Json.toJson(categories));
+
+        return ok(Json.toJson(allCategories));
     }
+
+
 
     @Transactional
     public Result getWords()
     {
-        List<Category> allCategories = Category.getAll();
-        Set<String> categories = new HashSet<>();
-        for(Category category : allCategories) {
-            categories.add(category.name);
+        List<Word> allWords = Word.getAll();
+        for(Word word : allWords) {
+            word.category.words=null;
+            word.answers=null;
         }
-        categories = categories.stream().collect(Collectors.toSet());
-        return ok(Json.toJson(categories));
+
+        return ok(Json.toJson(allWords));
     }
 
 }

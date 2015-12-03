@@ -23,7 +23,7 @@ angular.module('app.vocabulary').controller('ExerciseController', function ($sco
         // TODO: Record user voice and send to the server
         $timeout(function () {
             $scope.showResult = true;
-        }, 5000)
+        }, 1000)
     }
 
     WordsDataService.getWords($scope.category, $scope.level).then(function (words){
