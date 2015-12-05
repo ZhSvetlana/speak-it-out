@@ -4,10 +4,10 @@ create table answer (
   id                        integer primary key AUTO_INCREMENT,
   audio                     varchar(255),
   spelling                  varchar(255),
-  game_session_id           integer,
-  word_id                   integer,
-  foreign key (game_session_id) references game_session (id),
-  foreign key (word_id) references word (id)
+  gameSessionId           integer,
+  wordId                   integer,
+  foreign key (gameSessionId) references game_session (id),
+  foreign key (wordId) references word (id)
 )
 ;
 
@@ -19,19 +19,19 @@ create table category (
 
 create table game_session (
   id                        integer primary key AUTO_INCREMENT,
-  sequence_number           integer,
+  sequenceNumber           integer,
   date                      date,
-  correct_answers           integer,
-  user_id                   integer,
-  foreign key (user_id) references user (id)
+  correctAnswers           integer,
+  userId                   integer,
+  foreign key (userId) references user (id)
 )
 ;
 
 create table user (
   id                        integer primary key AUTO_INCREMENT,
-  first_name                varchar(255),
-  second_name               varchar(255),
-  birth_date                date,
+  firstName                varchar(255),
+  secondName               varchar(255),
+  birthDate                date,
   gender                    varchar(255),
   email                     varchar(255),
   password                  varchar(255),
@@ -44,8 +44,8 @@ create table word (
   spelling                  varchar(255),
   picture                   varchar(255),
   level                     integer,
-  category_id               integer,
-  foreign key (category_id) references category (id)
+  categoryId               integer,
+  foreign key (categoryId) references category (id)
 )
 ;
 

@@ -7,6 +7,8 @@ GET     /                           controllers.Application.index()
 
 GET     /categories                 controllers.Application.categories()
 GET     /exercise                   controllers.Application.exercise()
+GET     /login                      controllers.Application.login()
+POST    /login                      controllers.Application.authenticate()
 
 GET     /api/categories             controllers.Application.getCategories()
 GET     /api/words                 controllers.Application.getWords()

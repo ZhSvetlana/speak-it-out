@@ -1,6 +1,11 @@
 package models;
 
+
+import play.db.jpa.JPA;
+
 import javax.persistence.*;
+
+
 import java.util.Date;
 import java.util.List;
 
@@ -9,7 +14,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "user")
-public class User{
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public int id;
@@ -22,5 +27,18 @@ public class User{
     public int level;
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     public List<GameSession> gameSessions;
+
+    public static User authenticate(String email, String password) {
+
+        System.out.println("Hello");
+        TypedQuery<User> query = JPA.em().createQuery("SELECT p FROM User p WHERE p.email = :email AND p.password = :password", User.class);
+        query.setParameter("email", email);
+        query.setParameter("password", password);
+        System.out.println("Hello2");
+        List results = query.getResultList();
+        if (results.isEmpty()) return null;
+        else if (results.size() == 1) return (User) results.get(0);
+        throw new NonUniqueResultException();
+    }
 }
 

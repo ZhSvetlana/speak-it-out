@@ -43,10 +43,11 @@ body {
 
 .main-container {
     position: relative;
-    top: 40px;
+    top: 30px;
     background-color: rgba(255, 255, 0, 0.5);
     box-shadow: 0 0 10px rgba(0,0,0,0.7);
     padding-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .main-content {
@@ -71,4 +72,17 @@ h1 {
 .center {
     display: block;
     margin: 0 auto;
+}
+
+.result {
+    padding: 40px 0;
+}
+
+.result p {
+    font-size: 30px;
+}
+
+.result .btn {
+    display: inline;
+    margin: 10px;
 }
