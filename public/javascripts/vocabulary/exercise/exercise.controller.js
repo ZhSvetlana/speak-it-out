@@ -21,9 +21,9 @@ angular.module('app.vocabulary').controller('ExerciseController', function ($sco
 
     $scope.getUserInput = function() {
         // TODO: Record user voice and send to the server
-        $timeout(function () {
-            $scope.showResult = true;
-        }, 1000)
+        //$timeout(function () {
+        //    $scope.showResult = true;
+        //}, 5000)
     }
 
     WordsDataService.getWords($scope.category, $scope.level).then(function (words){

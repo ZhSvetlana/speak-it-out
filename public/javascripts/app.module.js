@@ -1,4 +1,4 @@
-angular.module('app', ['app.main', 'app.vocabulary'])
+angular.module('app', ['app.main', 'app.vocabulary', 'app.angularAudioRecorder'])
     .config(function () {
         'use strict';
 

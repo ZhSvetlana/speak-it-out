@@ -8,7 +8,7 @@ import java.util.List;
  * Created by Svetlana on 22.11.2015.
  */
 @Entity
-@Table(name = "game_session")
+@Table(name = "gameSession")
 public class GameSession {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

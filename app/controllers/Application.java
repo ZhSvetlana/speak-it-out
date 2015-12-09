@@ -8,10 +8,7 @@ import play.db.jpa.Transactional;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.categories;
-import views.html.exercise;
-import views.html.index;
-import views.html.login;
+import views.html.*;
 
 import java.util.List;
 
@@ -54,7 +51,22 @@ public class Application extends Controller {
         }
     }
 
+// Logout
 
+    @Transactional
+    public Result logout() {
+        session().clear();
+        flash("success", "You've been logged out");
+        return redirect(
+                routes.Application.index()
+        );
+    }
+
+//Register
+
+    public Result register() {
+        return ok(register.render());
+    }
 
     @Transactional
     public Result getCategories() {
@@ -66,6 +78,27 @@ public class Application extends Controller {
         return ok(Json.toJson(allCategories));
     }
 
+    @Transactional
+    public Result addUser() {
+
+        User person = Form.form(User.class).bindFromRequest().get();
+
+        //Check if User (email) already exist in the database
+        if (User.find(person.email) == null) {
+            person.save();
+
+            //Login the user
+            session().clear();
+            session("email", person.email);
+            session("id", Integer.toString(person.id));
+            System.out.println("Person " + person.firstName + " " + person.secondName + " saved successfully");
+        } else {
+            System.out.println("Email address " + person.email + " already exists");
+        }
+        return redirect(
+                routes.Application.index()
+        );
+    }
 
     @Transactional
     public Result getWords() {

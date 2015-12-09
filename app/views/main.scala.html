@@ -7,11 +7,8 @@
         <title>@title</title>
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
         <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
         <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
         <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
     </head>
     <body ng-app="app">
@@ -27,7 +24,7 @@
                         <div class="col-sm-4">
                             <div class="menu">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/">Start</a></li>
                                     <li><a href="/categories">Categories</a></li>
                                     <li><a href="#">Profile</a></li>
                                 </ul>
@@ -36,7 +33,7 @@
                         <div class="col-sm-4">
                             <h1 class="text-right">Hello, Kid!</h1>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                                <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                                 <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
                             </ul>
                         </div>
@@ -45,6 +42,9 @@
                 @content
             </div>
         </div>
+        <script src="@routes.Assets.versioned("javascripts/vendor/jquery.min.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/vendor/angular.min.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/vendor/bootstrap.min.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/app.module.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/main/main.module.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/vocabulary/vocabulary.module.js")"></script>
@@ -52,10 +52,14 @@
         <script src="@routes.Assets.versioned("javascripts/vocabulary/categories/categories.controller.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/vocabulary/exercise/exercise.controller.js")"></script>
         <script src="@routes.Assets.versioned("javascripts/vocabulary/words-data.service.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angularAudioRecorder/audio-recorder.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angularAudioRecorder/flash-recorder.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angularAudioRecorder/html5-recorder.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/angularAudioRecorder/audio.controller.js")"></script>
         <script>
-$(document).ready(function() {
-    $('a[href="' + this.location.pathname + '"]').parent().addClass('active');
-});
+            $(document).ready(function() {
+                $('a[href="' + this.location.pathname + '"]').parent().addClass('active');
+            });
         </script>
     </body>
 </html>

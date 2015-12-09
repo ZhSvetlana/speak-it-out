@@ -16,7 +16,7 @@ body {
 }
 
 .navbar-nav {
-    margin: 0;
+    margin: -1px;
 }
 
 .navbar {
@@ -34,6 +34,8 @@ body {
 .navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>.active>a:hover {
     background-color: #F7EF70;
+    border: 1px solid #e7e7e7;
+    border-bottom: none;
 }
 
 .menu {
@@ -66,9 +68,10 @@ h1 {
 
 .btn {
     display: block;
-    margin: auto;
+    margin: 20px auto;
+    font-size: 22px;
+    font-weight: 600;
 }
-
 .center {
     display: block;
     margin: 0 auto;

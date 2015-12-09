@@ -14,7 +14,37 @@
                     <ul class="list-inline" style="color : yellow">
                         <li ng-repeat="word in correctWords">*</li>
                     </ul>
-                    <button>Finish!</button>
+                    <div ng-controller='DemoController'>
+                        <ng-audio-recorder id='audioInput' audio-model='recordedInput'>
+                                <!-- Start controls, exposed via recorder-->
+                            <div ng-if="recorder.isAvailable">
+                                @*<button ng-click="recorder.startRecord()" type="button" ng-disabled="recorder.status.isRecording">
+                                    Start Record
+                                </button>
+                                <button ng-click="recorder.stopRecord()" type="button" ng-disabled="recorder.status.isRecording === false">
+                                    Stop Record
+                                </button>
+                                <button ng-click="recorder.playbackRecording()" type="button"
+                                ng-disabled="recorder.status.isRecording || !recorder.audioModel">
+                                    Play Back
+                                </button>*@
+                                <button ng-click='recorder.startRecord()'>Start</button>
+                                <button ng-click='recorder.stopRecord()'>Stop</button>
+                                <button ng-click='recorder.save("assets/recordings/1.wav")'>Save</button>
+                            </div>
+
+                            <div ng-if="!recorder.isAvailable">
+                                Message for users when recording is not possible.
+                            </div>
+                        </ng-audio-recorder>
+                    </div>
+                    @*<ng-audio-recorder id="mainAudio" audio-model="recorded" show-player="false">*@
+                    @*<!-- controls -->*@
+                    @*<button ng-click='recorder.startRecording()'>Start</button>*@
+                    @*<button ng-click='recorder.stopRecording()'>Stop</button>*@
+                    @*<button ng-click='recorder.save("assets/recordings/1.wav")'>Save</button>*@
+                    @*</ng-audio-recorder>*@
+                    <button type="button" class="btn btn-default btn-lg" >Finish!</button>
                 </div>
             </div>
             <div class="col-md-3">
@@ -30,20 +60,19 @@
                 </div>
                 <div class="col-md-6">
                     <div class="result">
-                        <p>You think this is a <span ng-bind="answer"></span></p>
-                        <p>In fact this is a <span ng-bind="currentWord.spelling"></span></p>
+                        <p>You think this is a <span style="color: red;"@*ng-bind="answer"*@>dog</span></p>
+                        <p>In fact this is a <span style="color: green;"ng-bind="currentWord.spelling"></span></p>
                         <button type="button" class="btn btn-default btn-lg" ng-click="nextWord()">Next</button>
                         <button type="button" class="btn btn-default btn-lg" >Finish!</button>
                     </div>
                 </div>
             </div>
             <div class="text-center">
-            Your progress:
-            <ul class="list-inline" style="color : yellow">
-                <li ng-repeat="word in correctWords">*</li>
-            </ul>
-</div>
+                Your progress:
+                <ul class="list-inline" style="color : yellow">
+                    <li ng-repeat="word in correctWords">*</li>
+                </ul>
+            </div>
         </div>
-    </div>
     </div>
 }
